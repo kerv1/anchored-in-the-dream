@@ -2,6 +2,12 @@
 
 A mobile-first August 2026 fasting plan for DreamLife Dallas Worship & Arts.
 
+## Live
+
+- Production: https://dreamlifefast.kervmusic.com
+- Netlify URL: https://dreamlifefast-kervmusic.netlify.app
+- Repo: https://github.com/kerv1/anchored-in-the-dream
+
 ## Local development
 
 ```bash
@@ -21,14 +27,23 @@ Preview the production build locally:
 npm run preview
 ```
 
-## Netlify deployment
+## Netlify
 
-1. Push this repository to GitHub (or connect the folder in the Netlify UI).
-2. Create a new Netlify site from the repo.
-3. Build settings are already in `netlify.toml`:
-   - Build command: `npm run build`
-   - Publish directory: `dist`
-4. Deploy. SPA redirects are configured so client routes work.
+Build settings are in `netlify.toml`:
+
+- Build command: `npm run build`
+- Publish directory: `dist`
+- SPA redirects configured
+
+Continuous deploys are linked to the `master` branch on GitHub.
+
+For the custom domain, add a DNS **CNAME** at GoDaddy (`kervmusic.com`):
+
+| Type | Name | Value |
+|------|------|-------|
+| CNAME | `dreamlifefast` | `dreamlifefast-kervmusic.netlify.app` |
+
+After DNS propagates, Netlify will provision HTTPS automatically.
 
 ## Notes
 
